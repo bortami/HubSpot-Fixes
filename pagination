@@ -1,0 +1,2 @@
+{% if contents.total_page_count > 1 %}
+{% endif %}
