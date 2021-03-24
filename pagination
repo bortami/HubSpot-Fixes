@@ -1,2 +1,5 @@
 {% if contents.total_page_count > 1 %}
+    <!-- Add your pagination code here -->
+    
+    {% elif content.total_page_count == 0 %}
 {% endif %}
