@@ -1,0 +1,49 @@
+{% elif current_page_num > 1 %}
+   <link rel="canonical" href="{{ content.absolute_url }}/page/{{ current_page_num }}">
+  {% else %}
+      {% if request.path is string_containing '/all' %}
+           <link rel="canonical" href="{{ content.absolute_url }}/all">
+          {% else %}
+                 <link rel="canonical" href="{{ content.absolute_url }}">
+          {% endif %}
+  {% endif %}
+
+  {% if blog_author %}
+    {% if current_page_num > 1 %}
+      <script>
+        document.title += " | Page {{ current_page_num }}";
+        document.querySelector('meta[name="description"]').setAttribute("content","Page {{current_page_num}} - {{blog_author.display_name}} - {{content.meta_description|escapejs}}");
+      </script>
+    {% endif %}
+
+
+  {% elif topic %}
+    {% if current_page_num > 1 %}
+    <script>
+     document.title += " | Page {{ current_page_num }} ";
+     document.querySelector('meta[name="description"]').setAttribute("content", "Page {{current_page_num}} - {{ topic }} - {{content.meta_description|escapejs}}");
+     </script>
+    {% endif %}
+
+  {% elif tag %}
+     {% if current_page_num > 1 %}
+    <script>
+     document.title += " | Page {{ current_page_num }} ";
+     document.querySelector('meta[name="description"]').setAttribute("content", "Page {{current_page_num}} - {{ tag }} - {{content.meta_description|escapejs}}");
+     </script>
+    {% endif %}
+
+{% else current_page_num > 1 %}
+		<script>
+	    //Append page num to title so you don't have duplicate title tags
+	    document.title += " | Page {{current_page_num}}";
+	    // Replace Current Meta Description with new one that appends page num before it.
+	    document.querySelector('meta[name="description"]').setAttribute("content","Page {{current_page_num}} - {{content.meta_description|escapejs}}");
+    
+  		</script>
+
+	{% endif %}
+>
+  
+{% endif %}
+<!-- /End listing view IF -->
