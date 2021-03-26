@@ -1,3 +1,15 @@
+<!-- `is_listing_view` is a HubL variable in the developer info pane that checks if the page is a listing view such as blog listing page -->
+
+{% if is_listing_view %}
+  {% if request.path|split("/", 5)|last == "1" %}
+    <script>
+	    //Append page num to title so you don't have duplicate title tags
+	    document.title += " | Page {{current_page_num}}";
+	    // Replace Current Meta Description with new one that appends page num before it.
+	    document.querySelector('meta[name="description"]').setAttribute("content","Page {{current_page_num}} - {{content.meta_description|escapejs}}");
+    
+  </script>
+
 {% elif current_page_num > 1 %}
    <link rel="canonical" href="{{ content.absolute_url }}/page/{{ current_page_num }}">
   {% else %}
@@ -43,7 +55,7 @@
   		</script>
 
 	{% endif %}
->
+
   
 {% endif %}
 <!-- /End listing view IF -->
