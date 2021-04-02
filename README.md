@@ -11,3 +11,7 @@ I add this to the "Additional Head Markup" on the blog template.
 
 This hides the pagination when the blog listing page only has one page. This is to prevent duplicate content errors.
 I add this as a wrapper around the pagination code. 
+
+##[Duplicate H1s on Blog Posts](https://github.com/mtabor66/HubSpot-Fixes/blob/main/blog-banner)
+
+This shows the banner only on listing views.
