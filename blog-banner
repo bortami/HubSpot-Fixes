@@ -1,0 +1,4 @@
+{% if is_listing_view %}
+{# banner module here #}
+{% else %}
+{% endif %}
