@@ -19,3 +19,6 @@ This shows the banner only on listing views.
 ## [Blog Tag Listing](https://github.com/mtabor66/HubSpot-Fixes/blob/main/blog-tags)
 
 This gets a list of all available blog tags so you can do something with them.
+
+## [Minutes Read Function](https://github.com/mtabor66/HubSpot-Fixes/blob/main/Min%20Read)
+This calculates how many minutes it takes to read an article
