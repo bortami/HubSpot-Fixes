@@ -1,0 +1,14 @@
+{# get a list of all available tags #}
+		{% set compile = [] %}
+		{% for post in contents %}
+		   {% for item in post.topic_list %}
+				{% set compile2 = compile.append(item) %}
+			{% endfor %}
+		{% endfor %}
+	    
+
+			{% for tag in compile|unique|sort(False, False) %}
+			    {# Do a thing with each {{tag}} #}
+			{% endfor %}
+
+		
